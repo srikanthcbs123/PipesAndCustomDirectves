@@ -1,0 +1,83 @@
+<h1>Pipes Examples</h1>
+<div>
+  <b>
+    <h4>Without Pipes Example Started</h4>
+    City:{{ city }}<br />
+    Salary:{{ Salary }}<br />
+    Person:{{ person }}--(Direct object we can't print)<br />
+    <!-- PersonFirstaneme:{{ person.firstname }}<br />
+    PersonLastName:{{ person.lastname }}<br /> -->
+    Currentdate:{{ todayDate }}<br />
+  </b>
+  <h4>Without Pipes Example Ended</h4>
+  <hr />
+  <h4>pipes usage started</h4>
+  <b>
+    City_Uppercase: {{ city | uppercase }}<br />
+    City_LowerCase: {{ city | lowercase }}<br />
+    City_Slice: {{ city | slice : 2 : 6 | uppercase }}( Slice does not change
+    the original text.it's extact the specified text from orginal text)<br />
+    Number: {{ Salary | number }}<br />
+    Number_2: {{ Salary | number : ".2" }}<br />
+    Currency_usdollar:{{ Salary | currency : "USD" }}<br />
+    Currency_indianrupee:{{ Salary | currency : "INR" }}<br />
+    Currency_gbpcountry:{{ Salary | currency : "GBP" }}<br />
+    Currency_europiancountry:{{ Salary | currency : "EUR" }}<br />
+    percentageFind:{{ percentageFind | percent }}<br />
+    PersonData:{{ person | json }}<br />
+    <hr />
+    Short date:{{ todayDate | date : "shortDate" }}<br />
+    Medium date:{{ todayDate | date : "mediumDate" }}<br />
+    Long date:{{ todayDate | date : "longDate" }}<br />
+    Full date:{{ todayDate | date : "fullDate" }}<br />
+    Short Time:{{ todayDate | date : "shortTime" }}<br />
+    LongTime:{{ todayDate | date : "mediumTime" }}<br />
+    Short:{{ todayDate | date : "short" }}<br />
+    Medium:{{ todayDate | date : "medium" }}<br />
+    d/M/y:{{ todayDate | date : "d/M/y" }}<br />
+    y-M-d:{{ todayDate | date : "y-M-d" }}<br />
+    h:m:s:{{ todayDate | date : "h:m:s" }}<br />
+    H:m:{{ todayDate | date : "H:m" }}<br />
+    a:{{ todayDate | date : "a" }}<br />
+    Short date:{{ todayDate | date : "shortDate" }}<br />
+    EEE:{{ todayDate | date : "EEE" }}<br />
+    EEEE:{{ todayDate | date : "EEEE" }}<br />
+    MMM:{{ todayDate | date : "MMM" }}<br />
+    MMMM:{{ todayDate | date : "MMMM" }}<br />
+    Z:{{ todayDate | date : "Z" }}<br />
+
+    <hr />
+    <h4>Custom PIPEs USAGE</h4>
+    video duration without custompipe:{{ VideoDuration }} <br />
+    video duration with custompipe hoursandminutes:{{
+      VideoDuration | duration : "hoursandminutes"
+    }}
+    <br />
+    video duration with custompipe hoursandminutes:{{
+      VideoDuration | duration : "hoursonly"
+    }}
+    <br />
+
+    <hr />
+    <hr />
+    <h1>Custom age pipe usage</h1>
+    ageDiffrence Display:{{ birthDate | age }}<br />
+    OrgialString:{{ text }} <br />
+    reverstring:{{ text | reverse | uppercase }}<br />
+
+    OriginalMaleName:{{ MaleName }}<br />
+    OriginalFemaleName:{{ FemaleName }}<br />
+
+    MaleName:{{ MaleName | title : "male" }}<br />
+    FemaleName:{{ FemaleName | title : "female" }}
+  </b>
+</div>
+<h1>Custom Directives Implementation</h1>
+Firname:<input type="text" placeholder="Please enter firstanme" appAutofocus />
+(We are adding additional behaviour to html elemnet by using autofoust
+dirtectice)
+<p appBasic="green">I am in Hyderabad</p>
+<h1 appBasic="orange">JNTU ENGIEENERING COLLEGE</h1>
+<input type="button" value="usersigup" appBasic="green" />
+<!-- Invoke directive from html tag:
+<tag directiveattributename directiveproperty=" value "> </tag> -->
